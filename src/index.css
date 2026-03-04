@@ -1,0 +1,129 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #0d0d14;
+  --color-surface: #13131d;
+  --color-surface-light: #1c1c2a;
+  --color-border: #26263a;
+  --color-accent: #7f85f5;
+  --color-accent-dim: #5459c4;
+  --color-hit: #4ade80;
+  --color-miss: #f87171;
+  --color-warning: #fb923c;
+  --color-text: #dde1f0;
+  --color-text-dim: #5a5e7a;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+  overflow: hidden;
+  user-select: none;
+}
+
+/* Custom crosshair when in game area */
+.game-area {
+  cursor: crosshair;
+}
+
+/* Target animations */
+@keyframes target-spawn {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes target-hit {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
+@keyframes target-expire {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+@keyframes countdown-pop {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-target-spawn {
+  animation: target-spawn 0.15s ease-out forwards;
+}
+
+.animate-target-hit {
+  animation: target-hit 0.2s ease-out forwards;
+}
+
+.animate-target-expire {
+  animation: target-expire 0.3s ease-out forwards;
+}
+
+.animate-countdown-pop {
+  animation: countdown-pop 0.4s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.3s ease-out forwards;
+}

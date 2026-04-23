@@ -36,6 +36,8 @@ npm run build    # output to dist/
 npm run preview  # preview the production build
 ```
 
+[UI Preview](https://i.ibb.co/cSkh9Tmd/image.png)
+
 ## Tech Stack
 
 - [React 19](https://react.dev/)
